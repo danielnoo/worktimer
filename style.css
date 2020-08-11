@@ -1,7 +1,7 @@
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 30rem 20rem 1fr 1fr;
+  grid-template-rows: 20rem 1fr 1fr 1fr;
   
 }
 #clock {
@@ -21,6 +21,8 @@
   grid-row-end: span 1;
   
   margin-top: 25px;
+  display: flex;
+  flex-direction: column;
 
   
 }
@@ -30,20 +32,31 @@
   font-size: 2em;
   padding: 10px;
   border-radius: 7px;
-  
+  width: 100%;
   
 
   
 }
 
-button {
-  position: relative;
-  left: 5%;
-}
+
 
 img:hover {
   transform: scale(1.15);
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  transition: all 2s ease-in;
+  -webkit-transition: all 2s ease-in;
+  -moz-transition: all 2s ease-in;
+  -o-transition: all 2s ease-in;
 }
 
+p {
+  text-align: center;
+  font-size: 2rem;
+}
 
-
+button:hover {
+  transform: scale(1.05);
+}
