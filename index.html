@@ -1,3 +1,7 @@
+
+<!-- Sound effects obtained from https://www.zapsplat.com -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,16 +22,17 @@
 </div>
 
 <div>
-<img src="doodle-24.svg" onclick="setTimer(25)">
+<img src="doodle-24.svg" id="shortWorkTimer">
   <p>25 mins!</p>
 </div>
 <div>
-<img src="doodle-05.svg" onclick="setTimer(45)">
+<img src="doodle-05.svg" id="longWorkTimer">
   <p>45 mins!</p>
 </div>
 <div class="breakButtonContainer">
-  <button class="breakButton" onclick="setTimer(5)">5 Minute Break</button>
-  <button class="breakButton" onclick="setTimer(15)">15 Minute Break</button>
+  <div id="toggles"><button id="pauseButton" class="toggleButtons">Pause</button><button id="resetButton" class="toggleButtons">Reset</button></div>
+  <button class="breakButton" id="shortBreak">5 Minute Break</button>
+  <button class="breakButton" id="longBreak">15 Minute Break</button>
   <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique" target="_blank"><button class="breakButton">Learn About Pomodoro</button></a>
 </div>
 

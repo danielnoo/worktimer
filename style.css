@@ -1,7 +1,7 @@
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 20rem 1fr 1fr 1fr;
+  grid-template-rows: 40rem 1fr 1fr 1fr;
   
 }
 #clock {
@@ -59,4 +59,20 @@ p {
 
 button:hover {
   transform: scale(1.05);
+}
+
+#toggles {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1em;
+ 
+  border-radius: 7px;
+  width: 100%;
+}
+
+.toggleButtons {
+  font-size: 2em;
+  padding: 10px;
+  border-radius: 7px;
+  width: 100%;
 }
