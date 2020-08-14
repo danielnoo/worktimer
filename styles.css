@@ -1,0 +1,158 @@
+
+@font-face {
+  font-family: "marker";
+  src: url(PermanentMarker-Regular.ttf);
+
+}
+
+
+@media screen and (max-width: 700px) {
+  .toggleButtons {
+    display: block;
+    
+    
+  }
+  #resetButton {
+    width: 100%;
+  }
+  
+  #pauseButton {
+    width: 100%;
+  }
+}
+
+.container {
+  
+  display: grid;
+  grid-template-columns: 1fr 75% 1fr;
+  grid-template-rows: 48em 15em 200px;
+  
+  
+
+  
+}
+
+.app {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: span 1;
+  background-color: #FAACA8;
+  background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);
+  display: grid;
+  grid-template-rows: 12rem 23rem 15rem;
+  border-radius: 25px;
+}
+
+.images {
+  min-width: auto;
+  max-width: auto;
+  min-height: auto;
+  max-height: auto;
+  grid-row-start: 2;
+
+
+}
+
+#clock {
+  font-size: 8em;
+  text-align: center;
+  font-family: 'marker';
+  grid-column-start: 1;
+  grid-column-end: span 4;
+  grid-row-start: 1;
+  grid-row-end: span 1;
+  
+  align-self: center;
+
+  text-shadow: 6px 6px 2px rgb(255, 255, 255);
+  
+  
+}
+
+.breakButtonContainer {
+  grid-column-start: 2;
+  grid-column-end: span 2;
+  grid-row-start: 2;
+  grid-row-end: span 1;
+  
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  justify-self: center;
+ 
+  
+}
+
+
+
+
+
+img:hover {
+  transform: scale(1.15);
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  transition: all 2s ease-in;
+  -webkit-transition: all 2s ease-in;
+  -moz-transition: all 2s ease-in;
+  -o-transition: all 2s ease-in;
+}
+
+p {
+  text-align: center;
+  font-size: 1.7rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: aliceblue;
+  border-radius: 25px;
+  box-shadow: rgb(221, 44, 44, 0.3) 0px 2px 8px 0px;
+  padding: 8px;
+
+  
+  
+}
+
+
+p:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+
+.toggleButtons {
+  
+  
+  border-radius: 7px;
+  width: 100%;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-around;
+  
+}
+
+#resetButton {
+  width: 40%;
+}
+
+#pauseButton {
+  width: 40%;
+}
+
+.stats {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row: 2;
+  grid-row-end: span 1;
+  width: 100%;
+  background-color: #FAACA8;
+  background-image: linear-gradient(19deg, #DDD6F3 0%, #FAACA8 100%);
+  border-radius: 25px;
+  margin-top: 1em;
+}
+
+.footer {
+  grid-row: 3/4;
+  grid-column: 2/3;
+}
