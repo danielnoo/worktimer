@@ -86,7 +86,6 @@ shortWorkTimerButton.addEventListener('click', () => {
   clearInterval(clockTimer);
   let workDuration = 25;
   timer.innerHTML = workDuration + ' minutes';
-  
   timerRunning = true;
   shortWorkTimerButton.classList.add('buttonPressed');
   clockTimer = setInterval(() => {
@@ -179,7 +178,6 @@ fiveMinBreakButton.addEventListener('click', () => {
   clearInterval(clockTimer);
   let workDuration = 5;
   timer.innerHTML = workDuration + ' minutes';
-  removeButtonPress();
   timerRunning = true;
   fiveMinBreakButton.classList.add('buttonPressed');
   clockTimer = setInterval(() => {
@@ -209,7 +207,6 @@ fifteenMinBreakButton.addEventListener('click', () => {
   clearInterval(clockTimer);
   let workDuration = 15;
   timer.innerHTML = workDuration + ' minutes';
-  removeButtonPress();
   timerRunning = true;
   fifteenMinBreakButton.classList.add('buttonPressed');
   clockTimer = setInterval(() => {
@@ -238,7 +235,6 @@ thirtyMinBreakButton.addEventListener('click', () => {
   clearInterval(clockTimer);
   let workDuration = 30;
   timer.innerHTML = workDuration + ' minutes';
-  removeButtonPress();
   timerRunning = true;
   thirtyMinBreakButton.classList.add('buttonPressed');
   clockTimer = setInterval(() => {
@@ -267,7 +263,6 @@ sixtyMinBreakButton.addEventListener('click', () => {
   clearInterval(clockTimer);
   let workDuration = 60;
   timer.innerHTML = workDuration + ' minutes';
-  removeButtonPress();
   timerRunning = true;
   sixtyMinBreakButton.classList.add('buttonPressed');
   
@@ -292,10 +287,11 @@ sixtyMinBreakButton.addEventListener('click', () => {
 pauseButton.addEventListener('click', () => {
 // resume  
   if(timerRunning === false) {
-    if(timer.innerHTML === "SNACK TIME") {
+    if(timer.innerHTML === "SNACK TIME" || timer.innerHTML ==="GET TO IT") {
       return;
     }
     let workDuration = parseInt(timer.innerHTML);
+    pauseButton.classList.remove('buttonPressed');
     timerRunning = true;
     clockTimer = setInterval(() => {
       workDuration--;
@@ -311,11 +307,12 @@ pauseButton.addEventListener('click', () => {
     }, 1000)
 // pause
   } else {
-    if(timer.innerHTML === "SNACK TIME") {
+    if(timer.innerHTML === "SNACK TIME" || timer.innerHTML === "GET TO IT") {
       return;
     }
     clearInterval(clockTimer);
     pauseButton.innerHTML = "Resume";
+    pauseButton.classList.add('buttonPressed');
     timerRunning = false;
   }
 });
@@ -329,13 +326,8 @@ resetButton.addEventListener('click', () => {
   // use recursion to remove the button pressed effect
   // from any button that has it
 
-  let pressed = document.getElementsByClassName('buttonPressed');
   
-  function removeButtonPress() {
-    pressed[0].classList.remove('buttonPressed');
-    if(pressed[0]) removeButtonPress();
-  };
-
+  
   removeButtonPress();
 
 
@@ -382,6 +374,9 @@ function closeM(){
 // award for hitting personal best - peanut butter badge
 
 // adding behavioural analysis to reward/break earning
+
+// refactor to MVC standards
+
 
 
 

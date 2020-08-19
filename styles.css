@@ -443,4 +443,5 @@ transform: scale(0);
   color: white;
   background-color: #E27683;
   transform: scale(1.1);
+  z-index: 5;
 }
