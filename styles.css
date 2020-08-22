@@ -6,7 +6,23 @@
 }
 
 
-
+@media only screen and (max-width: 900px) {
+  #imgBox {
+    width: 60px;
+    
+  }
+  
+  
+  #cupcake {
+    margin-left: 0rem;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 97% 1fr;
+    grid-template-rows: 48em auto 200px;
+  }
+ 
+}
     
     
   
@@ -14,8 +30,9 @@
 
 .container {
   
-  display: grid;
-  grid-template-columns: 1fr 75% 1fr;
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: 1fr 77% 1fr;
   grid-template-rows: 48em auto 200px;
   
   
@@ -31,24 +48,34 @@
   background-color: #FAACA8;
   background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);
   display: grid;
-  grid-template-rows: 12rem 23rem 15rem;
+  grid-template-rows: 12rem 1fr 15rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   border-radius: 25px;
   margin-top: 1em;
+  height: 96vh;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.images {
-  min-width: auto;
-  max-width: auto;
-  min-height: auto;
-  max-height: auto;
+
+
+
+#imgBox {
+  grid-row: 2/4;
+  grid-column: 1/2;
+  display: inline-flex;
+  flex-direction: column;
+  padding-bottom: 100px;
 }
+
 
 #coffee {
   grid-row: 3/4;
   grid-column: 1/2;
   align-self: end;
-  margin-bottom: 7rem;
-  margin-left: 2rem;
+  
+  
   
 
 
@@ -57,13 +84,18 @@
 #burger {
   grid-row: 2/3;
   grid-column:4/5;
-  margin-right: 3rem;
+  
+  
+  
+  
 }
 
 #cupcake {
   grid-row: 2/3;
   grid-column: 1/2;
-  margin-left: 3rem;
+  
+  
+  height: auto;
   
   
 }
@@ -88,12 +120,13 @@
   color: #FFF200;
   text-shadow: 0px 0px 22px black;
   grid-row: 3/4;
-  grid-column: 3;
+  grid-column: 3/4;
   align-self: center;
   justify-self: end;
   z-index: 3;
   margin-right: 4rem;
-  
+  position: relative;
+  left: 80%;
   
   
 }
@@ -113,6 +146,7 @@
   
   
   
+  
   justify-self: center;
   display: grid;
 
@@ -120,17 +154,7 @@
   grid-template-rows: 5rem 5rem 5rem 5rem 5rem;
 }
 
-img:hover {
-    transform: rotate(360deg);
 
-  -webkit-transform: rotate(360deg);
-  -o-transform: rotate(360deg);
-  -moz-transform: rotate(360deg);
-  transition: all 2s ease-in;
-  -webkit-transition: all 2s ease-in;
-  -moz-transition: all 2s ease-in;
-  -o-transition: all 2s ease-in;
-}
 
 
 .imgGrow {
@@ -217,15 +241,15 @@ p:hover {
 }
 
 .stats {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row: 2;
-  grid-row-end: span 1;
+  
   width: 100%;
   background-color: #FAACA8;
   background-image: linear-gradient(19deg, #DDD6F3 0%, #FAACA8 100%);
   border-radius: 25px;
   margin-top: 1em;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
   
 }
 
@@ -243,11 +267,6 @@ p:hover {
 }
 
   
-.footer {
-  grid-row: 3/4;
-  grid-column: 2/3;
-}
-
 #breakHeader {
   font-family: 'marker';
   text-shadow: 6px 6px 2px rgba(233, 183, 183, 0.3);
@@ -445,3 +464,67 @@ transform: scale(0);
   transform: scale(1.1);
   z-index: 5;
 }
+
+.footer {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-evenly;
+  height: auto;
+  font-size: 0.8em;
+}
+
+#hourGlass {
+  grid-row: 3/4;
+  grid-column: 2/4;
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 200px;
+  justify-self: center;
+  background-color: aliceblue;
+  border-radius: 100%;
+  
+  text-align: center;
+  box-shadow: rgb(221, 44, 44, 0.3) 0px 2px 8px 0px,
+              rgb(221, 44, 44, 0.3) 0px 2px 8px 0px;
+}
+
+#hourGlassInside {
+  margin-top: 20px;
+}
+
+@-moz-keyframes spin {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
+
+
+.rotateGlass {
+  animation-name: spin;
+  animation-duration: 10000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 10000ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: spin;
+  -moz-animation-duration: 10000ms;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: spin;
+  -ms-animation-duration: 10000ms;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+}
+
+

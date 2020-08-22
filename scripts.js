@@ -10,7 +10,7 @@ const fifteenMinBreak = 900000;
 const shortWorkTimer = 1500000;
 const longWorkTimer = 2700000;
 
-
+const hourGlass = document.querySelector('#hourGlass');
 const badges = document.querySelector('#badges');
 const timer = document.querySelector("#clock");
 
@@ -32,13 +32,27 @@ let cupCakeCounter = 0;
 let coffeeCounter = 0;
 let burgerCounter = 0;
 
+// while the timer is running, the hourglass spins
+
+let rotateGlass = () => {
+ hourGlass.classList.add('rotateGlass');
+};
+
+let stopRotate = () => {
+hourGlass.classList.remove('rotateGlass');
+};
 
 
-  
+
+
+
+
+// remove all red highlight button press effects on call  
 function removeButtonPress() {
   let pressed = document.getElementsByClassName('buttonPressed');
   if(pressed.length > 0){
   pressed[0].classList.remove('buttonPressed');
+  stopRotate();
   };
 };
 
@@ -87,6 +101,7 @@ shortWorkTimerButton.addEventListener('click', () => {
   let workDuration = 25;
   timer.innerHTML = workDuration + ' minutes';
   timerRunning = true;
+  rotateGlass();
   shortWorkTimerButton.classList.add('buttonPressed');
   clockTimer = setInterval(() => {
     workDuration--;
@@ -135,6 +150,7 @@ longWorkTimerButton.addEventListener('click', () => {
   let workDuration = 45;
   timer.innerHTML = workDuration + ' minutes';
   timerRunning = true;
+  rotateGlass();
   longWorkTimerButton.classList.add('buttonPressed');
   clockTimer = setInterval(() => {
     workDuration--;
@@ -179,6 +195,7 @@ fiveMinBreakButton.addEventListener('click', () => {
   let workDuration = 5;
   timer.innerHTML = workDuration + ' minutes';
   timerRunning = true;
+  rotateGlass();
   fiveMinBreakButton.classList.add('buttonPressed');
   clockTimer = setInterval(() => {
     workDuration--;
@@ -208,6 +225,7 @@ fifteenMinBreakButton.addEventListener('click', () => {
   let workDuration = 15;
   timer.innerHTML = workDuration + ' minutes';
   timerRunning = true;
+  rotateGlass();
   fifteenMinBreakButton.classList.add('buttonPressed');
   clockTimer = setInterval(() => {
     workDuration--;
@@ -236,6 +254,7 @@ thirtyMinBreakButton.addEventListener('click', () => {
   let workDuration = 30;
   timer.innerHTML = workDuration + ' minutes';
   timerRunning = true;
+  rotateGlass();
   thirtyMinBreakButton.classList.add('buttonPressed');
   clockTimer = setInterval(() => {
     workDuration--;
@@ -264,6 +283,7 @@ sixtyMinBreakButton.addEventListener('click', () => {
   let workDuration = 60;
   timer.innerHTML = workDuration + ' minutes';
   timerRunning = true;
+  rotateGlass();
   sixtyMinBreakButton.classList.add('buttonPressed');
   
   clockTimer = setInterval(() => {
@@ -292,10 +312,16 @@ pauseButton.addEventListener('click', () => {
     }
     let workDuration = parseInt(timer.innerHTML);
     pauseButton.classList.remove('buttonPressed');
+    pauseButton.innerHTML = "Pause";
     timerRunning = true;
+    rotateGlass();
     clockTimer = setInterval(() => {
       workDuration--;
-      timer.innerHTML = workDuration;
+      if(workDuration === 1){
+        timer.innerHTML = workDuration + ' minute!!!'
+      } else {
+      timer.innerHTML = workDuration + ' minutes';
+      }
       if(workDuration === 0) {
         clearInterval(clockTimer);
         timer.innerHTML = "SNACK TIME";
@@ -312,6 +338,7 @@ pauseButton.addEventListener('click', () => {
     }
     clearInterval(clockTimer);
     pauseButton.innerHTML = "Resume";
+    stopRotate();
     pauseButton.classList.add('buttonPressed');
     timerRunning = false;
   }
@@ -329,7 +356,7 @@ resetButton.addEventListener('click', () => {
   
   
   removeButtonPress();
-
+  stopRotate();
 
 });
 
