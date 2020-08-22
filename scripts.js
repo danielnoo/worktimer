@@ -56,7 +56,7 @@ function removeButtonPress() {
   };
 };
 
-let burgerQuery = function() {
+let burgerQuery = () => {
   // called after a work period is completed
   // if user has completed 4 of the same consecutive work periods
   // since 5am local time 
@@ -209,6 +209,7 @@ fiveMinBreakButton.addEventListener('click', () => {
       clearInterval(clockTimer);
       timer.innerHTML = "GET TO IT";
       soundEffect.play();
+      removeButtonPress();
       pauseButton.innerHTML = "Pause";
     }
   }, 60000)
@@ -239,6 +240,7 @@ fifteenMinBreakButton.addEventListener('click', () => {
       clearInterval(clockTimer);
       timer.innerHTML = "GET TO IT";
       soundEffect.play();
+      removeButtonPress();
       pauseButton.innerHTML = "Pause";
     }
   }, 60000)
@@ -268,6 +270,7 @@ thirtyMinBreakButton.addEventListener('click', () => {
       clearInterval(clockTimer);
       timer.innerHTML = "GET TO IT";
       soundEffect.play();
+      removeButtonPress();
       pauseButton.innerHTML = "Pause";
     }
   }, 1000)
@@ -297,6 +300,7 @@ sixtyMinBreakButton.addEventListener('click', () => {
       clearInterval(clockTimer);
       timer.innerHTML = "GET TO IT";
       soundEffect.play();
+      removeButtonPress();
       pauseButton.innerHTML = "Pause";
     }
   }, 1000)
