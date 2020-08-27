@@ -491,7 +491,8 @@ transform: scale(0);
 }
 
 #hourGlassInside {
-  margin-top: 20px;
+  margin-top: 18px;
+  
 }
 
 @-moz-keyframes spin {

@@ -406,9 +406,16 @@ function closeM(){
 
 // adding behavioural analysis to reward/break earning
 
-// refactor to MVC standards
+// rewards not being given if pause/resume is used to complete
 
+// refactor for DRY principles!!!! ************************
 
+// refactor for es6
 
+// have a single timer function accept paramters from the buttonpress 
+// function call - - have rewards given based on which button is pressed
+// when timer runs out
+
+// separate into multiple files and use import/export
 
 
