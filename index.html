@@ -17,44 +17,82 @@
 
 <body class="container">
 <main class="app">
-<div id="clock">
-GET TO WORK
-</div>
+  <div id="clock">
+GET TO IT
+  </div>
 
-<div class="images">
-  <img src="doodle-24.svg">
-  
-</div>
-<div class="images">
-  <img src="doodle-05.svg" >
-  
-</div>
-<div class="breakButtonContainer">
-  <p id="shortWorkTimer">25 mins!</p>
-  <p id="longWorkTimer">45 mins!</p>
-  <div class="toggleButtons">
+  <div id="imgBox" class="images" >
+    <img id="coffee" src="doodle-46.svg">
+    <img id="cupcake" src="doodle-24.svg">
     
-    <p id="pauseButton" >Pause</p>
-    <p id="resetButton" >Reset</p>
+    <img id="burger" src="doodle-05.svg">
+  </div>
+  <div class="images" id="burger"></div>
+  
   
   </div>
+ 
+  <div class="breakButtonContainer">
   
-  <p class="breakButton" id="shortBreak">5 Minute Break</p>
-  <p class="breakButton" id="longBreak">15 Minute Break</p>
+    <div id="workHeader">Work</div>
+    <div id="workButtons">
+    
+      <p id="shortWorkTimer">25</p>
+      <p id="longWorkTimer">45</p>
   
-</div>
+    </div>
+  
+    <div id="breakHeader">Break</div>
+    <div id="breakButtons">
+    
+      <p  id="shortBreak">5</p>
+      <p  id="longBreak">15</p>
+      <p  id="thirtyBreak">30</p>
+      <p  id="sixtyBreak">60</p>
+    
+    </div>
+  
+  
+    <div class="toggleButtons">
+    
+      <p id="pauseButton" >Pause</p>
+      <p id="resetButton" >Reset</p>
+  
+    </div>
+  
+  </div>
 
+  <div id="hourGlass"><img id="hourGlassInside" src="hourglass.svg"/></div>
+
+  <div onclick="openModal()" id="info">info</div>
+
+
+<!--modal opened if info button clicked-->
+
+<div id="modal-window" class="shadow preload">
+
+    <div class="main-modal">
+      <h1>Main Modal</h1>
+      <button onclick="closeM()">CLOSE Modal</button>
+    </div>
+
+</div>
 </main>
+
 <section class="stats">
-  Your Stats:
+  <div id="statsHeader">Your Stats:</div>
+  <div id="badges"></div>
 </section>
 
 
 
 
 
+
 <footer class="footer">
-  <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique" target="_blank">Learn About Pomodoro</a>
+  <div class="footerTag">Icons made by <a href="https://www.flaticon.com/authors/alfredo-hernandez" title="Alfredo Hernandez">Alfredo Hernandez</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></div>
+  <div class="footerTag"><a href="https://en.wikipedia.org/wiki/Pomodoro_Technique" target="_blank">Learn About Pomodoro</a></div>
+  <div class="footerTag">Sound effects obtained from <a href="https://www.zapsplat.com">zapsplat.com</a></div>
 </footer>
 
   <script src="scripts.js"></script>
